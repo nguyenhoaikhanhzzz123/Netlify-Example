@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<title>💖 Gửi Bé Giao 💖</title>
+<style>
+  body {
+    margin: 0;
+    height: 100vh;
+    background: linear-gradient(120deg, #ffe6f0, #fff0f5, #ffeaf4);
+    overflow: hidden;
+    font-family: "Segoe UI", sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  h1 {
+    font-size: 46px;
+    color: #d63384;
+    opacity: 0;
+    animation: fadeIn 3s forwards;
+    margin-bottom: 10px;
+  }
+
+  p {
+    font-size: 22px;
+    color: #6d214f;
+    width: 80%;
+    max-width: 650px;
+    line-height: 1.6;
+    opacity: 0;
+    animation: fadeIn 4s 2s forwards;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* Hiệu ứng tim bay */
+  .heart {
+    position: absolute;
+    bottom: -30px;
+    color: #ff4d6d;
+    font-size: 20px;
+    animation: fly 6s linear infinite;
+    opacity: 0.8;
+  }
+
+  @keyframes fly {
+    0% {
+      transform: translateY(0) scale(1) rotate(0deg);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(-110vh) scale(1.8) rotate(360deg);
+      opacity: 0;
+    }
+  }
+
+  footer {
+    position: absolute;
+    bottom: 15px;
+    font-size: 14px;
+    color: #a24d7d;
+    opacity: 0.7;
+  }
+</style>
+</head>
+<body>
+  <h1>💐 Chúc mừng Ngày Phụ Nữ 20/10, Bé Giao 💐</h1>
+  <p>
+    Anh chúc Bé 20/10 vui vẻ bên gia đình và người thân 💞<br>
+    Luôn tươi cười và tràn đầy tích cực trong cuộc sống 🌸<br>
+    Hy vọng anh sẽ giúp được Bé trong thời gian sắp tới 💫<br>
+    Chúc Bé một ngày thật vui vẻ và hạnh phúc nhé 💖
+  </p>
+
+  <footer>✨ Gửi đến Bé Giao — từ Anh 💕 ✨</footer>
+
+  <!-- Nhạc nền piano dịu nhẹ -->
+  <audio autoplay loop>
+    <source src="https://cdn.pixabay.com/download/audio/2023/03/01/audio_d75b745fc8.mp3?filename=gentle-piano-ambient-141532.mp3" type="audio/mpeg">
+  </audio>
+
+  <script>
+    const colors = ['#ff4d6d', '#ff80a6', '#ffb6c1', '#ff69b4'];
+    function createHeart() {
+      const heart = document.createElement('div');
+      heart.className = 'heart';
+      heart.style.left = Math.random() * 100 + 'vw';
+      heart.style.fontSize = Math.random() * 20 + 15 + 'px';
+      heart.style.color = colors[Math.floor(Math.random() * colors.length)];
+      heart.textContent = '❤';
+      heart.style.animationDuration = (3 + Math.random() * 3) + 's';
+      document.body.appendChild(heart);
+      setTimeout(() => heart.remove(), 6000);
+    }
+    setInterval(createHeart, 300);
+  </script>
+</body>
+</html>
